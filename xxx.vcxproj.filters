@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Pliki źródłowe">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Pliki nagłówkowe">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Pliki zasobów">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Dijkstra.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Poruszanie.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="src\funkcje.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gra.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="src\tekstury.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="src\kolejka_prio.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Djikstra.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="include\funkcje.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Gra.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="include\kolejka_prio.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="include\lista_s.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Poruszanie.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Stos.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="include\tekstury.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Dijkstra.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="t\menu.png">
+      <Filter>Pliki zasobów</Filter>
+    </Image>
+    <Image Include="Release\t\menu.png">
+      <Filter>Pliki zasobów</Filter>
+    </Image>
+    <Image Include="Ikona.ico">
+      <Filter>Pliki zasobów</Filter>
+    </Image>
+    <Image Include="ikonka.ico">
+      <Filter>Pliki zasobów</Filter>
+    </Image>
+    <Image Include="Joly.png">
+      <Filter>Pliki zasobów</Filter>
+    </Image>
+    <Image Include="ikonka_mm.png">
+      <Filter>Pliki zasobów</Filter>
+    </Image>
+    <Image Include="ikonka_m.png">
+      <Filter>Pliki zasobów</Filter>
+    </Image>
+    <Image Include="ikonka.png">
+      <Filter>Pliki zasobów</Filter>
+    </Image>
+    <Image Include="grafika\drzwi_o.png">
+      <Filter>Pliki zasobów</Filter>
+    </Image>
+    <Image Include="grafika\drzwi_z.png">
+      <Filter>Pliki zasobów</Filter>
+    </Image>
+    <Image Include="grafika\giera.png">
+      <Filter>Pliki zasobów</Filter>
+    </Image>
+    <Image Include="grafika\Goniec.png">
+      <Filter>Pliki zasobów</Filter>
+    </Image>
+    <Image Include="grafika\goniec2.png">
+      <Filter>Pliki zasobów</Filter>
+    </Image>
+    <Image Include="grafika\Ikona.ico">
+      <Filter>Pliki zasobów</Filter>
+    </Image>
+    <Image Include="grafika\Joly.png">
+      <Filter>Pliki zasobów</Filter>
+    </Image>
+    <Image Include="grafika\klucz.png">
+      <Filter>Pliki zasobów</Filter>
+    </Image>
+    <Image Include="grafika\klucz1.png">
+      <Filter>Pliki zasobów</Filter>
+    </Image>
+    <Image Include="grafika\klucz2.png">
+      <Filter>Pliki zasobów</Filter>
+    </Image>
+    <Image Include="grafika\klucz3.png">
+      <Filter>Pliki zasobów</Filter>
+    </Image>
+    <Image Include="grafika\Latwy.png">
+      <Filter>Pliki zasobów</Filter>
+    </Image>
+    <Image Include="grafika\Latwy_a.png">
+      <Filter>Pliki zasobów</Filter>
+    </Image>
+    <Image Include="grafika\mapa_1.png">
+      <Filter>Pliki zasobów</Filter>
+    </Image>
+    <Image Include="grafika\mapa_2.png">
+      <Filter>Pliki zasobów</Filter>
+    </Image>
+    <Image Include="grafika\mapa1x.png">
+      <Filter>Pliki zasobów</Filter>
+    </Image>
+    <Image Include="grafika\mapa1y.png">
+      <Filter>Pliki zasobów</Filter>
+    </Image>
+    <Image Include="grafika\menu.png">
+      <Filter>Pliki zasobów</Filter>
+    </Image>
+    <Image Include="grafika\Sredni.png">
+      <Filter>Pliki zasobów</Filter>
+    </Image>
+    <Image Include="grafika\Sredni_a.png">
+      <Filter>Pliki zasobów</Filter>
+    </Image>
+    <Image Include="grafika\Trudny.png">
+      <Filter>Pliki zasobów</Filter>
+    </Image>
+    <Image Include="grafika\Trudny_a.png">
+      <Filter>Pliki zasobów</Filter>
+    </Image>
+    <Image Include="grafika\widmo_lewo.png">
+      <Filter>Pliki zasobów</Filter>
+    </Image>
+    <Image Include="grafika\Wyjscie.png">
+      <Filter>Pliki zasobów</Filter>
+    </Image>
+    <Image Include="grafika\Wyjscie_a.png">
+      <Filter>Pliki zasobów</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Joly.rc">
+      <Filter>Pliki zasobów</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SDL2.dll" />
+    <None Include="SDL2_image.dll" />
+    <None Include="zlib1.dll" />
+    <None Include="libpng16-16.dll" />
+    <None Include="Joly.aps" />
+    <None Include="grafika\drzwi_o.xcf" />
+    <None Include="grafika\drzwi_z.xcf" />
+    <None Include="grafika\mapa(1).pdf" />
+    <None Include="grafika\mapa.pdf" />
+    <None Include="grafika\mapa_1.xcf" />
+    <None Include="grafika\mapa_2.xcf" />
+    <None Include="grafika\widmo_lewo.xcf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="macierze\dane_do_listyDJ.txt" />
+    <Text Include="macierze\dane_do_listyDJ_test.txt" />
+    <Text Include="macierze\macierz_do_Floyda.txt" />
+  </ItemGroup>
+</Project>

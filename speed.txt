@@ -1,0 +1,4 @@
+speed: 1
+3 - fast
+2 - medium
+1 - slow
