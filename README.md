@@ -1,3 +1,3 @@
-# Joly - The game ispired by pacman
+# Joly - The game ispired by pacman H1
 
 #Technologies
