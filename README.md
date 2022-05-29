@@ -29,6 +29,36 @@ for(int i=0;i<144;i++)
 }
 ```
 Roy-Warshall algorithm gives inforation about how to get to a player. However it doesn't provide the most optimal track.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Then comes the second, medium difficulty. In this scenario game is using Floyd-Warshall for pathfinding. Let's talk about matrices. The first matrix (MatrixF) indicates edges between vertices. This time single cell in row **x** and column **y** contains length of edge between vertice **x** and vertice **y**. Cells with the same index of column and row contains 0 and if there is no edge between vertex **x** and vertex **y**, the value will be 1000. Second matrix (MatrixR) is filled with 1000 on input. Algorithm is pretty similar to previous one, but this time it asks if current shortes path between **j** and **i** is longer than the path from **j** to **i** through **k** vertex. If it is, then MatrixF[**j**][**i**] is assigned with sum of MatrixF[**j**][**k**] and MatrixF[**k**][**i**]. MatrixR[**j**][**i**] will contain value **k**. As the result of the algorithm, cell [**j**][**i**] in MatrixR will be filled with number of vertex to go through for the shortest path between vertices **j** and **i**.  
-
-This time chasers are given with the shortes path that allows them to catch player. 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Then comes the second, medium difficulty. In this scenario game is using Floyd-Warshall for pathfinding. Let's talk about matrices. The first matrix (MatrixF) indicates edges between vertices. This time single cell in row **x** and column **y** contains length of edge between vertice **x** and vertice **y**. Cells with the same index of column and row contains 0 and if there is no edge between vertex **x** and vertex **y**, the value will be 1000. Second matrix (MatrixR) is filled with 1000 on input. Algorithm is pretty similar to previous one, but this time it asks if current shortes path between **j** and **i** is longer than the path from **j** to **i** through **k** vertex. If it is, then MatrixF[**j**][**i**] is assigned with sum of MatrixF[**j**][**k**] and MatrixF[**k**][**i**]. MatrixR[**j**][**i**] will contain value **k**. As the result of the algorithm, cell [**j**][**i**] in MatrixR will be filled with number of vertex to go through for the shortest path between vertices **j** and **i**.
+```
+void initMatrixR(int MatrixF[144][144],int MatrixR[144][144])
+{
+	for (int k = 0; k < 144; k++)
+	{
+		for (int j = 0; j < 144; j++)
+		{
+			for (int i = 0; i < 144; i++)
+			{	//Is the current shortest path longer than path through k?
+				if(MatrixF[j][k]+MatrixF[k][i]<MatrixF[j][i])
+				{
+					MatrixF[j][i] = MatrixF[j][k] + MatrixF[k][i];
+					MatrixR[j][i] = k;
+				}
+			}	
+		}
+	}
+}
+```
+This time chasers are given with the most optimal path that allows them to catch player. Reading path is done by simple recursive function:
+```
+void path(int i, int j, int MatrixR[144][144])
+{
+	int k = MatrixR[i][j];
+	if (k != 1000)
+	{
+		path(i, k, MatrixR);
+		std::cout << " " << k;
+		path(k, j, MatrixR);
+	}
+}
+```
