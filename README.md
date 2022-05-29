@@ -28,4 +28,4 @@ for(int i=0;i<144;i++)
 		}
 }
 ```
-This algorith gives inforation about how to get to a player. However it doesn't provide the most optimal track.Then comes the second, medium difficulty. In this scenario game is using Floyd-Warshall for pathfinding. This time chasers are given with the shortes path that allows them to catch player. Both algorithms iitialize NxN martices before the game start and have computional complexity O(n^3). The third algorith (one that is used in difficult mode) 
+Roy-Warshall algorithm gives inforation about how to get to a player. However it doesn't provide the most optimal track.<br>Then comes the second, medium difficulty. In this scenario game is using Floyd-Warshall for pathfinding. This time chasers are given with the shortes path that allows them to catch player. Both algorithms iitialize NxN martices before the game start and have computional complexity O(n^3). The third algorith (one that is used in difficult mode) 
