@@ -11,5 +11,20 @@ This project is about game using graph algorithms. Joly contains three different
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Joly is the game where player is collecting keys while being chased by ghosts. Those wraits doesn't move randomly. They are using graph algorithms to determinate path to the player. Game contains three different levels of difficulty.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The first one is easy mode. In easy mode path for every ghost is determinate by Roy-Warshall algorithm. Input matrix contains informations about which vertices are connected (are next to each other). For example, if vertice 4. is connected with vertice 12. then martix[4][12] will be filled with 12 and marix[12][4] will store value of 4. In other words, each record represents one vertice x and each cell on index i is filled with value i if vertice x and vertice i are linked. If they're not or column index and row index are equal (cell which tells us about connection of vertex with itself) then this field is assigned with numbger of 1000.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The algorithm is based on relation of transitivity. It iterates over our two-dimensional array looking for vertices that are linked with path. When it finds cell that indicates this situation (has value different than 1000), then it asks if there'is an oportunity to create path to another vertice and under this condition the path is created. All in all, idea behind the algorithm is preety simple: "I can go from **j** to **i** and **i** can also go from **j** to **k**, so **i** know the path between **i** and **k**".
-   
+```
+void inicjuj_macierz_RW(int tab_RW[144][144])
+{
+for(int i=0;i<144;i++)
+	for(int j=0;j<144;j++)
+		if (tab_RW[j][i] != 1000)
+		{
+			for (int k = 0; k < 144; k++)
+			{
+				if (tab_RW[j][k] == 1000 && tab_RW[i][k]!=1000)
+					tab_RW[j][k] = tab_RW[j][i];
+			}
+
+		}
+}
+```
 This algorith gives inforation about how to get to a player. However it doesn't provide the most optimal track.Then comes the second, medium difficulty. In this scenario game is using Floyd-Warshall for pathfinding. This time chasers are given with the shortes path that allows them to catch player. Both algorithms iitialize NxN martices before the game start and have computional complexity O(n^3). The third algorith (one that is used in difficult mode) 
