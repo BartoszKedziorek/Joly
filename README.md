@@ -29,4 +29,6 @@ for(int i=0;i<144;i++)
 }
 ```
 Roy-Warshall algorithm gives inforation about how to get to a player. However it doesn't provide the most optimal track.<br>
-Then comes the second, medium difficulty. In this scenario game is using Floyd-Warshall for pathfinding. This time chasers are given with the shortes path that allows them to catch player. Both algorithms iitialize NxN martices before the game start and have computional complexity O(n^3). The third algorith (one that is used in difficult mode) 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Then comes the second, medium difficulty. In this scenario game is using Floyd-Warshall for pathfinding. Let's talk about matrices. The first matrix indicates edges between vertices. This time single cell in row x and column y contains length of edge between vertice x and vertice y. Cells with the same index of column and row contains 0 and if there is no edge between vertex x and vertex y, the value will be 1000. Second matrix is filled with 1000 on input. 
+
+This time chasers are given with the shortes path that allows them to catch player. 
