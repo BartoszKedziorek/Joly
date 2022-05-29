@@ -9,7 +9,6 @@ This project is about game using graph algorithms. Joly contains three different
 
 ## Game mechanics
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Joly is the game where player is collecting keys while being chased by ghosts. Those wraits doesn't move randomly. They are using graph algorithms to determinate path to the player. Game contains three different levels of difficulty.
-
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The first one is easy mode. In easy mode path for every ghost is determinate by Roy-Warshall algorithm. Input matrix contains informations about which vertices are connected (are next to each other). For example, if vertice 4. is connected with vertice 12. then martix[4][12] will be filled with 12 and marix[12][4] will store value of 4. In other words, each record represents one vertice x and each cell on index i is filled with value i if vertice x and vertice i are linked. If they're not or column index and row index are equal (cell which tells us about connection of vertex with itself) then this field is assigned with numbger of 1000.
      The algorithm is based on relation of transitivity. It iterates over our two-dimensional array looking for vertices that are linked with path.Then it ask if 
    
