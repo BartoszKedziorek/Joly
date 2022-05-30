@@ -62,4 +62,10 @@ void path(int i, int j, int MatrixR[144][144])
 	}
 }
 ```
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The last algorithm differs from previous two. Firstly, it operates on graph represented as vertices dictionary. In this data structure each list in record number **i** contains indexes of vertex conected with vertice **i**. It also uses priority queue in order to make algorithm run with computional complexity of O(**E** log **V**) instead of O(**V**<sup>2</sup>), where **E** stands for number of edges and **V** is number of vertices
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The last algorithm differs from previous two. Firstly, it operates on graph represented as vertices dictionary. In this data structure each list in record number **i** contains indexes of vertex conected with vertice **i**. It also uses priority queue in order to make algorithm run with computional complexity of O(**E** log **V**) instead of O(**V**<sup>2</sup>), where **E** stands for number of edges and **V** is number of vertices. I also used stack to let the while loop know when it need to stop. Last but not least, table of current best estimates. Each element of this table tells what is the length of the current shortest path between source vertex and mVertex. It also have information about pre-last vertex of this path (mVertex is last vertice in the path so the pre-last is the one that is located before mVertex). So the table is contain structure like this:
+```
+struct{
+int previous;
+int length;
+int mVertex};
+```
