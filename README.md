@@ -62,7 +62,7 @@ void path(int i, int j, int MatrixR[144][144])
 	}
 }
 ```
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The last algorithm differs from previous two. It operates on graph represented as vertices dictionary. In this data structure each list in record number **i** contains indexes of vertex conected with vertice **i**. It also uses priority queue in order to make algorithm run with computional complexity of O(**E** log **V**) instead of O(**V**<sup>2</sup>), where **E** stands for number of edges and **V** is number of vertices. I also used stack to let the while loop know when it need to stop. Last but not least, table of current best estimates. Each element of this table tells what is the length of the current shortest path between source vertex and mVertex. It also have information about pre-last vertex of this path (mVertex is last vertice in the path so the pre-last is the one that is located before mVertex). So the table is contain structures like this:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The last algorithm differs from previous two. Firstly, it calculates paths for only one vertex (source).Secondly, algorithm operates on graph represented as vertices dictionary. In this data structure each list in record number **i** contains indexes of vertex conected with vertice **i**. It also uses priority queue in order to make algorithm run with computional complexity of O(**E** log **V**) instead of O(**V**<sup>2</sup>), where **E** stands for number of edges and **V** is number of vertices. I also used stack to let the while loop know when it need to stop. Last but not least, table of current best estimates. Each element of this table tells what is the length of the current shortest path between source vertex and mVertex. It also have information about pre-last vertex of this path (mVertex is last vertice in the path so the pre-last is the one that is located before mVertex). So the table is contain structures like this:
 ```
 struct{
 int previous;
@@ -78,3 +78,4 @@ tableOfCurrentBestEstimates[i].length = 1000;
 tableOfCurrentBestEstimates[i].mVertex = i;
 }
 ```
+Algorithm also need to assign tableOfCurrentBestEstimates[source].length with 0 and put on stack **V**elements (type doesn't matter at this point). Next thing to do is make a loop which will run while stack is not empty. In this loop we first need to c
