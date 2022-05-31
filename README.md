@@ -87,3 +87,5 @@ void pathD(edge paths[], int startVertex, int endVertex)
 	cout << paths[endVertex].mVertex << " ";
 }
 ```
+## Sources 
+This application is using SDL2-2.0.20 and SDL2_image-2.0.5 libraries, which are pulbished under gzip licence. Algorithms and data structures' implementation are based on the book "Algorytmy, struktury danych i techniki programowania" by Piotr Wróblewski. The idea of creating this project came from Carl Birch's channel named "Let's make games." (https://www.youtube.com/c/CarlBirch). As the title says, rules and idea of the game are ispired on "Pac-Man" created by Toru Iwatani. The Game map structure Author is Igor Poreda.
