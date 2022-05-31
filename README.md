@@ -78,4 +78,12 @@ tableOfCurrentBestEstimates[i].length = 1000;
 tableOfCurrentBestEstimates[i].mVertex = i;
 }
 ```
-Algorithm also need to assign tableOfCurrentBestEstimates[source].length with 0 and put on stack **V**elements (type doesn't matter at this point). Next thing to do is make a loop which will run while stack is not empty. In this loop we first need to c
+Algorithm also need to assign tableOfCurrentBestEstimates[source].length with 0 and put on stack **V**elements (type doesn't matter at this point). Next thing to do is make a loop which will run until stack is empty. In this loop first we need to put all edges that are connected with currentVertex (in the first iteration it should be source vertex) into priority queue. Then algorithm updates table of current best estimates basing on edges in queue and pop one element from the stack. This is the point where next iteration begins. When the loop end, algorithm also finish its action and the table of best estimates (previously: table of current best estimates) is ready to read paths from it. Function that reads path might look like this:
+```
+void pathD(edge paths[], int startVertex, int endVertex)
+{
+	if (paths[endVertex].mVertex == startVertex) { return; }
+	else { pathD(paths, startVertex, paths[endVertex].previous); }
+	cout << paths[endVertex].mVertex << " ";
+}
+```
