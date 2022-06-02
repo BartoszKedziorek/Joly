@@ -62,14 +62,18 @@ void path(int i, int j, int MatrixR[144][144])
 	}
 }
 ```
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The last algorithm differs from previous two. Firstly, it calculates paths for only one vertex (source).Secondly, algorithm operates on graph represented as vertices dictionary. In this data structure each list in record number **i** contains indexes of vertex conected with vertice **i**. It also uses priority queue in order to make algorithm run with computional complexity of O(**E** log **V**) instead of O(**V**<sup>2</sup>), where **E** stands for number of edges and **V** is number of vertices. I also used stack to let the while loop know when it need to stop. Last but not least, table of current best estimates. Each element of this table tells what is the length of the current shortest path between source vertex and mVertex. It also have information about pre-last vertex of this path (mVertex is last vertice in the path so the pre-last is the one that is located before mVertex). So the table is contain structures like this:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The last algorithm differs from previous two. Firstly, it calculates paths for only one vertex (source).Secondly, algorithm operates on graph represented as vertices dictionary. In this data structure each list in record number **i** contains indexes of vertex conected with vertice **i**. It also uses priority queue in order to make algorithm run with computional complexity of O(**E** log **V**) instead of O(**V**<sup>2</sup>), where **E** stands for number of edges and **V** is number of vertices. Algorithm implementation also uses stack to represent how many vertices haven't beem vistited yet. Last but not least, table of current best estimates. Each element of this table tells what is length of the current shortest path between source vertex and **mVertex**. It also have information about pre-last vertex of this path (**mVertex** is last vertice in the path so the pre-last is the one that is located before **mVertex**). So the table is contain structures like this:
 ```
 struct{
 int previous;
 int length;
 int mVertex};
 ```
-Now when we have all data structures that we need, let's talk about how Dijkstra's algorithm works. The first step is to iterate over table of current best estimates filling it wth proper data:
+Imlementations of this algorithm is quie complexed, so I'm going to just describe idea behind it. Algorihm stars from source vertex and adds to priority queue edges that are connected with it and haven't been added before. Then it takes edge with the lowest cost (the shortest one) and check whether sum of tableOfCurrentBestEstimates[**firstVertexOfEdge**].length and **EdgeLength** is lower than tableOfCurrentBestEstimates[**secondVertexOfEdge**]. If this conditions returns "true" it updates tableOfCurrentBestEstimates[**secondVertexOfEdge**] with **EdgeLength** and assign **previous** with **firstVertexOfEdge** and mVertex with **secondVertexOfEdge**
+
+
+/*
+Now when we have all data structures that we need, let's talk about how  the Dijkstra's algorithm works. The first step is to iterate over table of current best estimates filling it wth proper data:
 ```
 for (int i=0; i<144; i++)
 {
@@ -78,7 +82,7 @@ tableOfCurrentBestEstimates[i].length = 1000;
 tableOfCurrentBestEstimates[i].mVertex = i;
 }
 ```
-Algorithm also need to assign tableOfCurrentBestEstimates[source].length with 0 and put on stack **V**elements (type doesn't matter at this point). Next thing to do is make a loop which will run until stack is empty. In this loop first we need to put all edges that are connected with currentVertex (in the first iteration it should be source vertex) into priority queue. Then algorithm updates table of current best estimates basing on edges in queue and pop one element from the stack. This is the point where next iteration begins. When the loop end, algorithm also finish its action and the table of best estimates (previously: table of current best estimates) is ready to read paths from it. Function that reads path might look like this:
+Algorithm also need to assign tableOfCurrentBestEstimates[source].length with 0 and put on stack **V** elements (type doesn't matter at this point). Next thing to do is make a loop which will run until stack is empty. In this loop first we need to put all edges that are connected with currentVertex (in the first iteration it should be source vertex) into priority queue. Then algorithm updates table of current best estimates basing on edges in queue and pop one element from the stack. This is the point where next iteration begins. When the loop end, algorithm also finish its action and the table of best estimates (previously: table of current best estimates) is ready to read paths from it. Function that reads path might look like this:*/
 ```
 void pathD(edge paths[], int startVertex, int endVertex)
 {
