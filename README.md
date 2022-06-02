@@ -81,6 +81,10 @@ void pathD(edge TOCBE[], int startVertex, int endVertex)
 	cout << TOCBE[endVertex].mVertex << " ";
 }
 ```
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Implementation of this difficulty contains one more feature that makes it harder than medium-difficulty. In both scenarios ghosts use the shortest paths to catch player, but only in hard mode second ghost care about where is the first one. Paths for ghost number one are calculated normaly, nothing special here, but paths which will be used by second wrait are generated on modified vertices dictionary. Before the Dijkstra's Algorithm starts edges that are "blocked" by first spirit are beeing erased from dictionary. This change make ghosts not only use the most efficient paths, but also covering more corridors.
+
+![desc](https://user-images.githubusercontent.com/104023013/171661259-68dd227c-8888-433c-8d71-c31d2f686677.jpg)
+
 ## Game setup
 1.Download the project in .zip format<br>
 2.Extract the zip file<br>
