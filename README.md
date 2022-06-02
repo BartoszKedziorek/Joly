@@ -83,8 +83,7 @@ void pathD(edge TOCBE[], int startVertex, int endVertex)
 ```
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Implementation of this difficulty contains one more feature that makes it harder than medium-difficulty. In both scenarios ghosts use the shortest paths to catch player, but only in hard mode second ghost care about where is the first one. Paths for ghost number one are calculated normaly, nothing special here, but paths which will be used by second wrait are generated on modified vertices dictionary. Before the Dijkstra's Algorithm starts edges that are "blocked" by first spirit are beeing erased from dictionary. This change make ghosts not only use the most efficient paths, but also covering more corridors.
 
-![desc2 — kopia](https://user-images.githubusercontent.com/104023013/171666697-edb50b70-fd50-4287-8c0d-b48caeaddc5a.jpg)
-![desc — kopia](https://user-images.githubusercontent.com/104023013/171666711-df996825-4787-4e3a-a5e5-4a4687607d6c.jpg)
+![desc2 — kopia](https://user-images.githubusercontent.com/104023013/171666697-edb50b70-fd50-4287-8c0d-b48caeaddc5a.jpg)![desc — kopia](https://user-images.githubusercontent.com/104023013/171666711-df996825-4787-4e3a-a5e5-4a4687607d6c.jpg)<br>
 *Area marked with red color is not available for second ghost*
 
 ## Game setup
