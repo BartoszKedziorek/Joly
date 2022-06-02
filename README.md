@@ -82,7 +82,6 @@ void pathD(edge TOCBE[], int startVertex, int endVertex)
 }
 ```
 ## Game setup
-
 1.Download the project in .zip format<br>
 2.Extract the zip file<br>
 3.Go to the folder extracted from Joly-master.zip<br>
