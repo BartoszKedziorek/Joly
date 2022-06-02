@@ -6,7 +6,6 @@ This project is mostly about graph algorithms and data structures. Joly contains
 * SDL2-2.0.20
 * SDL2_image-2.0.5
 * Visual Studio Community 2019 - 16.11.13
-![Joly](https://user-images.githubusercontent.com/104023013/171620131-3ae10ce5-e55f-4c5e-a4b9-fa120cb1bdd4.png)
 
 ## Algorithms
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Joly is a game where player is collecting keys while being chased by ghosts. Those wraits doesn't move randomly. They use graph algorithms to determinate path between them and player. Game contains three different levels of difficulty.<br>
