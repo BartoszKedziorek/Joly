@@ -86,4 +86,4 @@ This application is using SDL2-2.0.20 and SDL2_image-2.0.5 libraries, which are 
 The idea of creating this project came from Carl Birch's channel named "Let's make games" (https://www.youtube.com/c/CarlBirch). As the title says, rules and idea of the game are ispired on "Pac-Man" created by Toru Iwatani.
 
 ## License
-Licensed under the MIT License
+Licensed under the [MIT License](LICENCE.txt)
