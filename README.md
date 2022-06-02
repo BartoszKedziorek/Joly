@@ -81,7 +81,7 @@ void pathD(edge TOCBE[], int startVertex, int endVertex)
 	cout << TOCBE[endVertex].mVertex << " ";
 }
 ```
-## Setup
+## Game setup
 
 1.Download the project in .zip format<br>
 2.Extract the zip file<br>
@@ -95,6 +95,10 @@ Release verison has been compiled on Windows OS, so game should be also run on i
 ![menu](https://user-images.githubusercontent.com/104023013/171625290-c77d4e00-706d-4cb0-a302-3117c0911826.jpg)
 
 First button is for easy mode, second one (under first one) is obviously for medium mode and the third one is responsible for difficult mode. The last fourth button is exit.
+
+## Project setup
+
+
 ## Sources 
 This application is using SDL2-2.0.20 and SDL2_image-2.0.5 libraries, which are pulbished under [gzip licence](https://www.libsdl.org/license.php). Algorithms and data structures implementation is based on the book "Algorytmy, struktury danych i techniki programowania" by Piotr Wróblewski. The game map structure author is Igor Poreda.
 
