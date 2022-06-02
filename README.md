@@ -6,6 +6,7 @@ This project is mostly about graph algorithms and data structures. Joly contains
 * SDL2-2.0.20
 * SDL2_image-2.0.5
 * Visual Studio Community 2019 - 16.11.13
+![Joly](https://user-images.githubusercontent.com/104023013/171620131-3ae10ce5-e55f-4c5e-a4b9-fa120cb1bdd4.png)
 
 ## Algorithms
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Joly is a game where player is collecting keys while being chased by ghosts. Those wraits doesn't move randomly. They use graph algorithms to determinate path between them and player. Game contains three different levels of difficulty.<br>
@@ -79,6 +80,17 @@ void pathD(edge TOCBE[], int startVertex, int endVertex)
 	cout << TOCBE[endVertex].mVertex << " ";
 }
 ```
+## Setup
+
+1.Download the project in .zip format
+2.Extract the zip file
+3.Go to the folder extracted from Joly-master.zip
+5.Extract Release.zip
+6.Go to the folder extracted from Release.zip
+7.Run Joly.exe
+
+Release verison has been compiled on Windows OS, so game should be also run on it. It may take few attempts to run executable file (even 20), but it should start at some point. 
+
 ## Sources 
 This application is using SDL2-2.0.20 and SDL2_image-2.0.5 libraries, which are pulbished under [gzip licence](https://www.libsdl.org/license.php). Algorithms and data structures implementation is based on the book "Algorytmy, struktury danych i techniki programowania" by Piotr Wróblewski. The game map structure author is Igor Poreda.
 
