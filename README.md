@@ -90,7 +90,7 @@ void pathD(edge TOCBE[], int startVertex, int endVertex)
 6.Go to the folder extracted from Release.zip
 7.Run Joly.exe
 
-Release verison has been compiled on Windows OS, so game should be also run on it. It may take few attempts to run executable file (even 20), but it should start at some point. 
+Release verison has been compiled on Windows OS, so game should be also run on it. It may take few attempts to run executable file (even 20), but it should start at some point.
 
 ## Sources 
 This application is using SDL2-2.0.20 and SDL2_image-2.0.5 libraries, which are pulbished under [gzip licence](https://www.libsdl.org/license.php). Algorithms and data structures implementation is based on the book "Algorytmy, struktury danych i techniki programowania" by Piotr Wróblewski. The game map structure author is Igor Poreda.
