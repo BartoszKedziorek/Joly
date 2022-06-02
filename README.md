@@ -1,5 +1,5 @@
 # Joly - The game ispired by pacman
-This project is mostly about graph algorithms and data structures. Joly contains three different levels of difficulty which are using three algorithms to determinate paths for the wraiths (Entities that chase player). Joly was made for educational purpose. I wanted to practise my programing skills, learn how to use SDL2 library and also get some knowledge about algorithms and data structures.
+This project is mostly about graph algorithms and data structures. Joly contains three different levels of difficulty which are using three algorithms to determinate paths for the wraiths (Entities that chase player). Joly was made for educational purpose. I wanted to practise my programing skills, learn how to use SDL2 library and also get some knowledge about algorithms and data structures. This is my first bigger project and first one that I published on github. When I have benn writting this code I didn't think about making it public and because of this the script is written in polish.
 
 ## Technologies
 * C/C++14
