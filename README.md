@@ -83,12 +83,12 @@ void pathD(edge TOCBE[], int startVertex, int endVertex)
 ```
 ## Setup
 
-1.Download the project in .zip format
-2.Extract the zip file
-3.Go to the folder extracted from Joly-master.zip
-5.Extract Release.zip
-6.Go to the folder extracted from Release.zip
-7.Run Joly.exe
+1.Download the project in .zip format<br>
+2.Extract the zip file<br>
+3.Go to the folder extracted from Joly-master.zip<br>
+5.Extract Release.zip<br>
+6.Go to the folder extracted from Release.zip<br>
+7.Run Joly.exe<br>
 
 Release verison has been compiled on Windows OS, so game should be also run on it. It may take few attempts to run executable file (even 20), but it should start at some point. If the program have started succesfully you would see this menu:
 
