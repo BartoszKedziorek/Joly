@@ -69,27 +69,18 @@ int previous;
 int length;
 int mVertex};
 ```
-Imlementations of this algorithm is quie complexed, so I'm going to just describe idea behind it. Algorihm stars from source vertex and adds to priority queue edges that are connected with it and haven't been added before. Then it takes edge with the lowest cost (the shortest one) and check whether sum of tableOfCurrentBestEstimates[**firstVertexOfEdge**].length and **EdgeLength** is lower than tableOfCurrentBestEstimates[**secondVertexOfEdge**]. If this conditions returns "true" it updates tableOfCurrentBestEstimates[**secondVertexOfEdge**] with **EdgeLength** and assign **previous** with **firstVertexOfEdge** and mVertex with **secondVertexOfEdge**
-
-
-/*
-Now when we have all data structures that we need, let's talk about how  the Dijkstra's algorithm works. The first step is to iterate over table of current best estimates filling it wth proper data:
+Implementation of this algorithm is quie complexed, so I'm going to just describe idea behind it. Algorihm stars from source vertex and adds to priority queue edges that are connected with it and haven't been added before. Then it takes edge with the lowest cost (the shortest one) and check whether sum of tableOfCurrentBestEstimates[**firstVertexOfEdge**].length and **EdgeLength** is lower than tableOfCurrentBestEstimates[**secondVertexOfEdge**]. If this conditions has returned "true" it updates tableOfCurrentBestEstimates[**secondVertexOfEdge**] with **EdgeLength** and assign **previous** with **firstVertexOfEdge** and mVertex with **secondVertexOfEdge**. Algorithm also add edges connected with **secondVertexOfEdge** (just like before). Whether this condition hasn't been met, then next edge from queue is handled. This operations are beeing repeated untill all vertices are visited. Function that reads path might look like this:
 ```
-for (int i=0; i<144; i++)
+void pathD(edge TOCBE[], int startVertex, int endVertex)
 {
-tableOfCurrentBestEstimates[i].previous = -1;
-tableOfCurrentBestEstimates[i].length = 1000;
-tableOfCurrentBestEstimates[i].mVertex = i;
-}
-```
-Algorithm also need to assign tableOfCurrentBestEstimates[source].length with 0 and put on stack **V** elements (type doesn't matter at this point). Next thing to do is make a loop which will run until stack is empty. In this loop first we need to put all edges that are connected with currentVertex (in the first iteration it should be source vertex) into priority queue. Then algorithm updates table of current best estimates basing on edges in queue and pop one element from the stack. This is the point where next iteration begins. When the loop end, algorithm also finish its action and the table of best estimates (previously: table of current best estimates) is ready to read paths from it. Function that reads path might look like this:*/
-```
-void pathD(edge paths[], int startVertex, int endVertex)
-{
-	if (paths[endVertex].mVertex == startVertex) { return; }
-	else { pathD(paths, startVertex, paths[endVertex].previous); }
-	cout << paths[endVertex].mVertex << " ";
+	//TOCBE - table of the current best estimates 
+	if (TOCBE[endVertex].mVertex == startVertex) { return; }
+	else { pathD(TOCBE, startVertex, TOCBE[endVertex].previous); }
+	cout << TOCBE[endVertex].mVertex << " ";
 }
 ```
 ## Sources 
-This application is using SDL2-2.0.20 and SDL2_image-2.0.5 libraries, which are pulbished under gzip licence. Algorithms and data structures' implementation are based on the book "Algorytmy, struktury danych i techniki programowania" by Piotr Wróblewski. The idea of creating this project came from Carl Birch's channel named "Let's make games." (https://www.youtube.com/c/CarlBirch). As the title says, rules and idea of the game are ispired on "Pac-Man" created by Toru Iwatani. The Game map structure Author is Igor Poreda.
+This application is using SDL2-2.0.20 and SDL2_image-2.0.5 libraries, which are pulbished under gzip licence. Algorithms and data structures implementation are based on the book "Algorytmy, struktury danych i techniki programowania" by Piotr Wróblewski. The Game map structure Author is Igor Poreda.
+
+## Inspirations
+The idea of creating this project came from Carl Birch's channel named "Let's make games." (https://www.youtube.com/c/CarlBirch). As the title says, rules and idea of the game are ispired on "Pac-Man" created by Toru Iwatani.
