@@ -92,7 +92,7 @@ void pathD(edge TOCBE[], int startVertex, int endVertex)
 
 Release verison has been compiled on Windows OS, so game should be also run on it. It may take few attempts to run executable file (even 20), but it should start at some point. If the program have started succesfully you would see this menu:
 
-![menu](https://user-images.githubusercontent.com/104023013/171624137-f151c37a-9895-400a-96f6-ebdb7411c42b.jpg)
+![menu](https://user-images.githubusercontent.com/104023013/171625290-c77d4e00-706d-4cb0-a302-3117c0911826.jpg)
 
 First button is for easy mode, second one (under first one) is obviously for medium mode and the third one is responsible for difficult mode. The last fourth button is exit.
 ## Sources 
