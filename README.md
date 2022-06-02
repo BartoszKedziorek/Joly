@@ -94,7 +94,7 @@ Release verison has been compiled on Windows OS, so game should be also run on i
 
 ![menu](https://user-images.githubusercontent.com/104023013/171624137-f151c37a-9895-400a-96f6-ebdb7411c42b.jpg)
 
-
+First button is for easy mode, second one (under first one) is obviously for medium mode and the third one is responsible for difficult mode. The last fourth button is exit.
 ## Sources 
 This application is using SDL2-2.0.20 and SDL2_image-2.0.5 libraries, which are pulbished under [gzip licence](https://www.libsdl.org/license.php). Algorithms and data structures implementation is based on the book "Algorytmy, struktury danych i techniki programowania" by Piotr Wróblewski. The game map structure author is Igor Poreda.
 
