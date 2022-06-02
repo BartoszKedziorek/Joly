@@ -96,7 +96,18 @@ Release verison has been compiled on Windows OS, so game should be also run on i
 First button is for easy mode, second one (under first one) is obviously for medium mode and the third one is responsible for difficult mode. The last fourth button is exit.
 
 ## Project setup
-To clone this project you'll need Visual Studio Community 2019 - 16.11.13 or newer (it also works on VSC 2022). Open command line in your proje
+In order to work on this project you'll need Visual Studio Community 2019 - 16.11.13 or newer (it also works on VSC 2022) and git installed. From your command line:
+```
+//Chose the destination folder
+cd [path to the folder]
+
+//initizlize git
+git init
+
+//clone repository
+git clone https://github.com/MichaelMuzan/Joly
+```
+Run "Joly_Soltion.sln".
 
 ## Sources 
 This application is using SDL2-2.0.20 and SDL2_image-2.0.5 libraries, which are pulbished under [gzip licence](https://www.libsdl.org/license.php). Algorithms and data structures implementation is based on the book "Algorytmy, struktury danych i techniki programowania" by Piotr Wróblewski. The game map structure author is Igor Poreda.
