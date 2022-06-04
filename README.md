@@ -2,8 +2,17 @@
 This project is mostly about graph algorithms and data structures. Joly contains three different levels of difficulty which are using three algorithms to determinate paths for the wraiths (entities that chase a player). Joly was made for my own educational purposes. I wanted to practise my programing skills, learn how to use SDL2 library and gain some knowledge about algorithms and data structures. This game is my first big project and the first one I published on github. While I was writing this code I wasn't thinking about making it public and because of that, the script is written in polish.
 
 ## Table of contents
-* [Technologies](## Technologies)
+* [Technologies](#tech)
+* [Algorithms](#alg)
+* [Game setup](#gs)
+* [Project setup](#ps)
+* [Source](#src)
+* [Inspiration](#ins)
+* [License](#lic)
 
+
+<a name="tech"/>
+	
 ## Technologies
 * C/C++14
 * SDL2-2.0.20
@@ -11,6 +20,8 @@ This project is mostly about graph algorithms and data structures. Joly contains
 * Visual Studio Community 2019 - 16.11.13
 
 ![gra](https://user-images.githubusercontent.com/104023013/171622972-bf84c578-ea1a-4a14-afe9-aba1589c238f.jpg)
+
+<a name="alg"/>
 
 ## Algorithms
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Joly is a the game where a player collects keys while being chased by ghosts. Those wraits don't move randomly. They use graph algorithms to determinate path between them and the player. The game contains three different levels of difficulty.<br>
@@ -89,6 +100,8 @@ void pathD(edge TOCBE[], int startVertex, int endVertex)
 ![desc2 — kopia](https://user-images.githubusercontent.com/104023013/171666697-edb50b70-fd50-4287-8c0d-b48caeaddc5a.jpg)![desc — kopia](https://user-images.githubusercontent.com/104023013/171666711-df996825-4787-4e3a-a5e5-4a4687607d6c.jpg)<br>
 *Area marked with red color is not available for second ghost*
 
+<a name="gs"/>
+
 ## Game setup
 1.Download the project in .zip format<br>
 2.Extract the zip file<br>
@@ -104,6 +117,8 @@ Release verison has been compiled on Windows OS, so game should be run on it. It
 First button is for easy mode, second one - medium mode and third one - difficult. The fourth button is exit.
 **Speed of entites can be changed by modifying value in speed.txt.**
 
+<a name="ps"/>
+
 ## Project setup
 In order to work on this project you'll need Visual Studio Community 2019 - 16.11.13 or newer (it also works on VSC 2022) and git installed. From your command line:
 ```
@@ -118,11 +133,17 @@ git clone https://github.com/MichaelMuzan/Joly
 ```
 Run "Joly_Soltion.sln" file.
 
+<a name="src"/>
+
 ## Sources 
 This application is using SDL2-2.0.20 and SDL2_image-2.0.5 libraries, which are pulbished under [gzip licence](https://www.libsdl.org/license.php). Algorithms and data structures implementation is based on the book "Algorytmy, struktury danych i techniki programowania" by Piotr Wróblewski. The author of the game map structure is Igor Poreda.
 
+<a name="ins"/>
+
 ## Inspirations
 The idea of creating this project came from Carl Birch's channel named "Let's make games" (https://www.youtube.com/c/CarlBirch). As the title says, rules and idea of the game are ispired on "Pac-Man" created by Toru Iwatani.
+
+<a name="lic"/>
 
 ## License
 Licensed under the [MIT License](https://github.com/MichaelMuzan/Joly/blob/master/LICENSE.txt)
