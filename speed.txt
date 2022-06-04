@@ -1,4 +1,4 @@
-speed: 1
+speed: 3
 3 - fast
 2 - medium
 1 - slow
