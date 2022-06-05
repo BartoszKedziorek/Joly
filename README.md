@@ -136,7 +136,10 @@ Run "Joly_Soltion.sln" file.
 <a name="src"/>
 
 ## Sources 
-This application is using SDL2-2.0.20 and SDL2_image-2.0.5 libraries, which are pulbished under [gzip licence](https://www.libsdl.org/license.php). Algorithms and data structures implementation is based on the book "Algorytmy, struktury danych i techniki programowania" by Piotr Wróblewski. The author of the game map structure is Igor Poreda.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This application is using SDL2-2.0.20 and SDL2_image-2.0.5 libraries, which are pulbished under [gzip licence](https://www.libsdl.org/license.php). Algorithms and data structures implementation is based on the book "Algorytmy, struktury danych i techniki programowania" by Piotr Wróblewski. The author of the game map structure is Igor Poreda.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;It contains zlib library entirely written by Jean-loup Gailly and Mark Adler. This software also uses:
+* IJG code copyright (C) 1991-2016, Thomas G. Lane, Guido Vollbeding
+* libwebp-7.dll Copyright (c) 2010, Google Inc. All rights reserved
 
 <a name="ins"/>
 
