@@ -13,5 +13,5 @@ void usun_droge(Lista_s<int> zwiazki,int i);
 void inicjuj_tab_scislosci(bool tab[144]);
 int ile_zjad(int i,int poz, bool tab[144]);
 void przywroc_droge(Lista_s<int> zwiazki, int i);
-ftp ruch_Djikstra(SDL_Rect* player, SDL_Rect* enemy, int &usun, Lista_s<int> zwiazki, int tabR[144][144], int tabRW[144][144],bool tab_s[144],bool pier[9][16]);
+funkcjaRuchu ruch_Djikstra(SDL_Rect* player, SDL_Rect* enemy, int &usun, Lista_s<int> zwiazki, int tabR[144][144], int tabRW[144][144],bool tab_s[144],bool pier[9][16]);
 

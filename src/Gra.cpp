@@ -349,9 +349,9 @@ postac* sredniacy[liczba_sredniakow];
 
 bool indeks_przyciski[4]{0,0,0,0};
 
-drzwi* przyciski[4];
+Drawable* przyciski[4];
 
-drzwi *  door;
+Drawable *  door;
 
 const char* nazwy_k[ilosc_k]
 {
@@ -403,10 +403,10 @@ postac* Gra::generuj_postac(const char* scierzka,int x, int y)
 	return wynik;
 }
 
-drzwi* Gra::generuj_przycisk(const char* scierzka,const char* scierzka1, int x, int y)
+Drawable* Gra::generuj_przycisk(const char* scierzka,const char* scierzka1, int x, int y)
 {
-	drzwi* wynik;
-	wynik = new drzwi; 
+	Drawable* wynik;
+	wynik = new Drawable; 
 	SDL_Surface* pow = IMG_Load(scierzka);
 	SDL_Texture* wgl = SDL_CreateTextureFromSurface(renderer, pow);
 	SDL_FreeSurface(pow);
@@ -531,10 +531,13 @@ void Gra::start_e()
 Gra::Gra(const char* nazwa, int x, int y, bool fullscreen)
 {
 	fstream Dj;
+	//dane o tym jakie wierzcho³ki s¹ ze sob¹ po³¹czone krawêdziami
 	Dj.open("macierze/dane_do_listyDJ.txt", ios::in);
+	//struktura danych, która bêdzie przechowywa³a te informacje z plku o krawêdziach
 	lista_krawedzi = new Lista_s<int>(144);
 	lista_krawedzi->wczytaj(Dj);
 	Dj.close();
+	//to jest hard code, bardzo z³a praktyka, niestety powtarza siê na przestrzeni tego projektu
 	mapa = new SDL_Rect;
 	mapa->h = 1080;
 	mapa->w = 1920;
@@ -545,6 +548,7 @@ Gra::Gra(const char* nazwa, int x, int y, bool fullscreen)
 		bool czy_fs = 0;
 		if (fullscreen) { czy_fs = SDL_SetWindowFullscreen; }
 
+		//inicjacja SDL2 i przypisanie renderera do okna
 		okno = SDL_CreateWindow(nazwa, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, x, y, czy_fs);
 		renderer = SDL_CreateRenderer(okno, -1, 0);
 		
@@ -555,29 +559,39 @@ Gra::Gra(const char* nazwa, int x, int y, bool fullscreen)
 
 	
 
+	//s¹ za³adowane dwie mapy w celu wyœwietlenia animacji
 	SDL_SetRenderDrawColor(renderer, 0, 255, 2, 255);
 	Mapa[0] = Tekstura::Load("grafika/mapa_1.png", renderer);	
 	Mapa[1] = Tekstura::Load("grafika/mapa_2.png", renderer);
 	Menu = Tekstura::Load("grafika/menu.png",renderer);
 	
-	door = new drzwi;
+	door = new Drawable;
 	door->wyglady[0] = Tekstura::Load("grafika/drzwi_z.png", renderer);
 	door->wyglady[1] = Tekstura::Load("grafika/drzwi_o.png", renderer);
 	door->poz = generuj_rect(door->poz, 120, 120, 1800, 1);
 	
 
+	//przyciski w menu
 	przyciski[0] = generuj_przycisk("grafika/Latwy.png","grafika/Latwy_a.png",480, 24);
 	przyciski[1] = generuj_przycisk("grafika/Sredni.png","grafika/Sredni_a.png", 480, 288);
 	przyciski[2] = generuj_przycisk("grafika/Trudny.png","grafika/Trudny_a.png", 480, 552);
 	przyciski[3] = generuj_przycisk("grafika/Wyjscie.png","grafika/Wyjscie_a.png", 480, 816);
 
 	
-
+	//macierz Roya-Warshalla, ju¿ po u¿yciu algorytmu
 	inicjuj_macierz_RW(macierzRW);
+	//wstêpnie ta funkcja inicjuje macierz R, ¿e odczytanie jej sugeruje, ¿e miêdzy ¿adnymi wierzcho³kami nie ma ¿adnego przejœcia
+	//jest to macierz ruchu
 	inicjuj_macierz_R(macierz_R);
+
+	//Tutaj ta funkcja ju¿ bezpoœrednio inicjuje algorytm Floyda-Warshalla
 	inicjuj_macierz_F(macierz_F, macierz_R);
+	//jak sama nazwa wskazuje, funkcja ta oznacza na macierzy kolizja miejsa w których s¹ jakiejœ obiekty
+	//terenu przez, któe nie mo¿e przejœæ ani gracz ani goniacy
 	inicjuj_przeszkody(kolizja);
+	//po prostu wype³nia funkcjê zerami
 	inicjuj_pierwszenstwo();
+	//tablica, która definiuje ile pól zosta³o zablokowanych przez pozycjê przeciwnika
 	inicjuj_tab_scislosci(tablica_scislosci);
 	readSpeed();
 	klucze[indeks_k] = new klucz;
@@ -649,7 +663,9 @@ void Gra::Update_s()
 
 void Gra::Upadate_e()
 {
-	
+	//Takie warunek logiczny jest w ka¿dej metodzie update
+	//Ma ona na celu zmianê ruchu przez goñce w odpowiedniej chwili
+	//Dziêki temu redukujemy tak¿e liczbê obliczeñ
 	if (zegar == cykl)
 	{
 		for (int i = 0; i < liczba_poszukiwaczy; i++
@@ -665,6 +681,7 @@ void Gra::Upadate_e()
 	
 	for (int i = 0; i<liczba_poszukiwaczy; i++)
 	{
+		//funkcja ta bezpoœrednio posiada wskaŸnik na pozycjê goñca aby móc j¹ modyfikwaæ
 		funkcja_ruch_gonce[i](poszukiwacze[i]->poz,zegar,mSpeed);
 
 	}

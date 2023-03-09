@@ -2,7 +2,7 @@
 #include<SDL.h>
 #include"funkcje.h"
 
-typedef void (*ftp)(SDL_Rect* p, int zeg, int wol);
+typedef void (*funkcjaRuchu)(SDL_Rect* p, int zeg, int wol);
 
 void inicjuj_macierz_R(int tab[144][144]);
 
@@ -19,5 +19,5 @@ void dol(SDL_Rect* p,int zeg,int spd);
 void gora(SDL_Rect* p,int zeg,int spd );
 void czekaj(SDL_Rect* p ,int zeg, int spd);
 
-ftp ruch_e(SDL_Rect* player, SDL_Rect* enemy, int tab[144][144], int tabRW[144][144],int &zaj, bool pier[9][16]);
-ftp ruch_ep(SDL_Rect* player, SDL_Rect* enemy, int tab[144][144],int &usun, bool pier[9][16]);
+funkcjaRuchu ruch_e(SDL_Rect* player, SDL_Rect* enemy, int tab[144][144], int tabRW[144][144],int &zaj, bool pier[9][16]);
+funkcjaRuchu ruch_ep(SDL_Rect* player, SDL_Rect* enemy, int tab[144][144],int &usun, bool pier[9][16]);

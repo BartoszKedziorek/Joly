@@ -17,7 +17,7 @@ struct postac
 	SDL_Rect* poz;
 };
 
-struct drzwi
+struct Drawable
 {
 	SDL_Texture* wyglady[2];
 	SDL_Rect* poz;
@@ -53,7 +53,7 @@ public:
 	klucz * generuj_klucz( klucz * wynik);
 	SDL_Rect* generuj_rect(SDL_Rect* prost, int ph, int pw, int px, int py);
 	postac* generuj_postac(const char* scierzka,int x, int y);
-	drzwi* generuj_przycisk(const char* scierzka, const char* scierzka1, int x, int y);
+	Drawable* generuj_przycisk(const char* scierzka, const char* scierzka1, int x, int y);
 	bool czy_zlapany(postac * gonaicy[], int ilosc, postac * gracz);
 	void start_t();
 	void start_e();

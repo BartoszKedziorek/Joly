@@ -3,7 +3,7 @@
 #include"include/Poruszanie.h"
 #include<Windows.h>
 
-Gra * Giera;
+Gra * Game;
 
 int main(int argc, char* args[])
 {
@@ -20,51 +20,37 @@ int main(int argc, char* args[])
 
     Uint8 poczatek;
     int koniec;
-    Giera = new Gra("Joly",1910,1000,1);
+    Game = new Gra("Joly",1910,1000,1);
   
     menu:
-    while (Giera->menu_on())
+    while (Game->menu_on())
     {
-        Giera->menu_events();
-        Giera->menu_update();
-        Giera->menu_render();
+        Game->menu_events();
+        Game->menu_update();
+        Game->menu_render();
     }
  
-    while (Giera->czy_w_trakcie_e())
+    while (Game->czy_w_trakcie_e())
     {
         poczatek = SDL_GetTicks();
-        Giera->Zdarzenia();
-        Giera->Upadate_e();
-        Giera->render_e();
+        Game->Zdarzenia();
+        Game->Upadate_e();
+        Game->render_e();
         koniec = SDL_GetTicks() - poczatek;
 
+        //Takie warunki w pentlach odpowiadaj¹ za dostosowanie klatek na sekundê
         if (koniec < op)
         {
             SDL_Delay(op - koniec);
         }
     }
 
-    while (Giera->czy_w_trakcie_t())
+    while (Game->czy_w_trakcie_t())
     {
         poczatek = SDL_GetTicks();
-        Giera->Zdarzenia();
-        Giera->Update_t();    
-        Giera->render_t();
-        koniec = SDL_GetTicks() - poczatek;
-
-        if (koniec < op)
-        {
-            SDL_Delay(op - koniec);
-
-        }
-    }
-
-    while (Giera->czy_w_trakcie_s())
-    {
-        poczatek = SDL_GetTicks();
-        Giera->Zdarzenia();
-        Giera->Update_s();
-        Giera->render_s();
+        Game->Zdarzenia();
+        Game->Update_t();    
+        Game->render_t();
         koniec = SDL_GetTicks() - poczatek;
 
         if (koniec < op)
@@ -74,7 +60,22 @@ int main(int argc, char* args[])
         }
     }
 
-    if (Giera->menu_on() == true) { goto menu; }
+    while (Game->czy_w_trakcie_s())
+    {
+        poczatek = SDL_GetTicks();
+        Game->Zdarzenia();
+        Game->Update_s();
+        Game->render_s();
+        koniec = SDL_GetTicks() - poczatek;
+
+        if (koniec < op)
+        {
+            SDL_Delay(op - koniec);
+
+        }
+    }
+
+    if (Game->menu_on() == true) { goto menu; }
  /*
     system("pause");
     SYSTEMTIME pocz,kon;

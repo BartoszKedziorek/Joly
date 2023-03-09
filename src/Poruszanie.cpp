@@ -77,7 +77,7 @@ void czekaj(SDL_Rect* p, int zeg, int wol)
 	
 }
 
-ftp ruch_ep(SDL_Rect* player, SDL_Rect* enemy, int tab[144][144],int &usun, bool pier[9][16])
+funkcjaRuchu ruch_ep(SDL_Rect* player, SDL_Rect* enemy, int tab[144][144],int &usun, bool pier[9][16])
 {
 	
 	int xp = poz_sx(player->x), yp = poz_sy(player->y);
@@ -104,7 +104,7 @@ ftp ruch_ep(SDL_Rect* player, SDL_Rect* enemy, int tab[144][144],int &usun, bool
 	else { usun = do_pole; pier[yp][xp] = 1; return czekaj; }
 }
 
-ftp ruch_e(SDL_Rect* player, SDL_Rect* enemy, int tab[144][144],int tabRW[144][144],int &zaj, bool pier[9][16])
+funkcjaRuchu ruch_e(SDL_Rect* player, SDL_Rect* enemy, int tab[144][144],int tabRW[144][144],int &zaj, bool pier[9][16])
 {
 
 	int xp = poz_sx(player->x), yp = poz_sy(player->y);
@@ -117,6 +117,7 @@ ftp ruch_e(SDL_Rect* player, SDL_Rect* enemy, int tab[144][144],int tabRW[144][1
 	
 		do_pole = tab[pole_p][pole_e];
 		
+		//odczytanie drogi
 		if (do_pole != 1000)
 		{
 			while (tab[pole_e][do_pole] != 1000) { do_pole = tab[pole_e][do_pole];
